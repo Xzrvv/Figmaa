@@ -1,49 +1,70 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity, SafeAreaView } from "react-native";
 
 const HomeTask = () => {
   return (
-    <View>
+    <SafeAreaView style = {styles.container} >
+      
       <Image
       style={styles.photo}
         source={require('./photo.png')}
       />
+     
+    <View style ={ styles.textcontainer}>
       <Text style= {styles.text}>
-         Hey Leslee,
-        there's a new course about
-        Figma
+         Hey Leslee,{'\n'} there's a new course about {'\n'}Figma
       </Text>
+      
       <Text style ={styles.newText}>
-        find out how our new matching tool can help you leaarn aother way
-    </Text>
+        Find out how our new matching tool can help you leaarn aother way
+    </Text> 
+    
     <TouchableOpacity style = {styles.button}>
       <Text style = {styles.newtext}>
         Discover the course
         </Text>
     </TouchableOpacity>
-    <TouchableOpacity style={styles.newbutton}>
+    <TouchableOpacity >
       <Text>
         Not now
       </Text>
     </TouchableOpacity>
     </View>
+    
+    </SafeAreaView>
+    
   )
 }
 const styles = StyleSheet.create ({
+  container:{
+    justifyContent :'center',
+   alignItems : 'center',
+  },
+  textcontainer:{
+    justifyContent : 'center',
+    gap:24,
+    alignItems: 'center'
+    
+    },
+  buttoncontainer:{
+  gap :20,
+  
+  },
   photo:{
     width : 250 ,
     height : 350,
-    left :69,
-    top:10
+    justifyContent:'center',
+    alignItems: 'center'
+   
   },
-   text :{
-    fontWeight:"bold",
-    color: "black",
-    fontSize: 35,
-    textAlign:'center'
+  text :{
+   fontWeight:"bold",
+   color: "black",
+   fontSize: 25,
+   textAlign:'center'
   
 
-  },
+ },
   newText:{
     fontSize:20,
     textAlign:'center',
@@ -51,20 +72,18 @@ const styles = StyleSheet.create ({
 
   },
   button:{
-    backgroundColor: 'black',
-        borderRadius:20,
+    backgroundColor: '#07122A',
         alignItems: 'center',
-        marginHorizontal:20,
-        top: 30
+        borderRadius : 15,
+        height: 50,
+        width : 300
+       
   },
   newtext:{
     color:'white',
     padding: 15,
   },
-  newbutton:{
-    top:50,
-    left: 190
-  }
+  
 })
 
 export default HomeTask;

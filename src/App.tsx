@@ -5,8 +5,8 @@ import SecondPage from './SecondPage';
 
 const App = () => {
   return (
-    <SafeAreaView>
-     <HomeTask/>
+    <SafeAreaView style ={{flex:1,}}>
+     {/* <HomeTask/> */}
     <SecondPage/>
     </SafeAreaView>
   )
